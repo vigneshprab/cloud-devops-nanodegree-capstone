@@ -3,10 +3,10 @@ pipeline {
     stages {
         stage('Lint HTML & Dockerfile'){
             steps {
-                sh 'tidy -q -e blue-green/blue/*.html'
-                sh 'tidy -q -e blue-green/green/*.html'
-                sh 'hadolint blue-green/blue/Dockerfile'
-                sh 'hadolint blue-green/green/Dockerfile'
+                sh 'tidy -q -e application/blue/*.html'
+                sh 'tidy -q -e application/green/*.html'
+                sh 'hadolint application/blue/Dockerfile'
+                sh 'hadolint application/green/Dockerfile'
             }
         }
         stage('Build and Publish Docker Image'){
