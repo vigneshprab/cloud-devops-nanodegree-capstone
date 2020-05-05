@@ -12,8 +12,8 @@ pipeline {
             steps{        
                 script{
                     docker.withRegistry('https://registry.hub.docker.com', 'docker') {
-                    def blue = docker.build("vigneshprab/blue-image","-f application/blue/Dockerfile blue-green/blue")
-                    def green = docker.build("vigneshprab/green-image","-f application/green/Dockerfile blue-green/green")
+                    def blue = docker.build("vigneshprab/blue-image","-f application/blue/Dockerfile application/blue")
+                    def green = docker.build("vigneshprab/green-image","-f application/green/Dockerfile application/green")
                     blue.push()
                     green.push()    
                     }
