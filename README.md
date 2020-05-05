@@ -14,7 +14,7 @@ In this project you will apply the skills and knowledge which were developed thr
 
 Execute cloudformation scripts inside infra/ folder:
 
-    sh ./create.sh CloudDevOpsCapstone eks_network.yml infra-params.json
+    sh ./create.sh DevOpsCapstone eks_network.yml infra-params.json
     
 Note: Creation of EKS cluster takes 15 minutes
 
