@@ -4,7 +4,9 @@ pipeline {
         stage('Lint HTML & Dockerfile'){
             steps {
                 sh 'tidy -q -e application/blue/*.html'
-                sh 'tidy -q -e application/green/*.html'                
+                sh 'tidy -q -e application/green/*.html' 
+				sh 'docker run --rm -i hadolint/hadolint < application/blue/Dockerfile'
+				sh 'docker run --rm -i hadolint/hadolint < application/green/Dockerfile'
             }
         }
 		
